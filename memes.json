@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Dancing Baby",
+    "imageUrl": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=400&fit=crop",
+    "year": 1996,
+    "category": "Dancing",
+    "description": "One of the first viral internet phenomena featuring a 3D rendered dancing baby."
+  },
+  {
+    "id": 2,
+    "title": "Hampster Dance",
+    "imageUrl": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400&h=400&fit=crop",
+    "year": 1998,
+    "category": "Animals",
+    "description": "Animated hamsters dancing to a sped-up version of 'Whistle Stop' from Robin Hood."
+  },
+  {
+    "id": 3,
+    "title": "All Your Base",
+    "imageUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=400&fit=crop",
+    "year": 2000,
+    "category": "Gaming",
+    "description": "Classic gaming meme from the intro of Zero Wing with hilariously bad translation."
+  },
+  {
+    "id": 4,
+    "title": "Badger Badger Badger",
+    "imageUrl": "https://images.unsplash.com/photo-1551524164-687a55dd1126?w=400&h=400&fit=crop",
+    "year": 2003,
+    "category": "Animals",
+    "description": "Hypnotic animated loop of badgers, mushrooms, and a snake."
+  },
+  {
+    "id": 5,
+    "title": "Chocolate Rain",
+    "imageUrl": "https://images.unsplash.com/photo-1514517521153-1be72277b32f?w=400&h=400&fit=crop",
+    "year": 2007,
+    "category": "Music",
+    "description": "Tay Zonday's viral song with unexpectedly deep voice and social commentary."
+  },
+  {
+    "id": 6,
+    "title": "LOLcats",
+    "imageUrl": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=400&fit=crop",
+    "year": 2005,
+    "category": "Animals",
+    "description": "Cats with funny captions in broken English - 'I Can Has Cheezburger?'"
+  },
+  {
+    "id": 7,
+    "title": "Rickroll",
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
+    "year": 2007,
+    "category": "Music",
+    "description": "Internet prank involving Rick Astley's 'Never Gonna Give You Up'."
+  },
+  {
+    "id": 8,
+    "title": "Dramatic Chipmunk",
+    "imageUrl": "https://images.unsplash.com/photo-1607006131748-4b8c1b9e0767?w=400&h=400&fit=crop",
+    "year": 2007,
+    "category": "Animals",
+    "description": "5-second clip of a prairie dog turning dramatically to the camera."
+  },
+  {
+    "id": 9,
+    "title": "Rage Comics",
+    "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=400&fit=crop",
+    "year": 2008,
+    "category": "Reaction",
+    "description": "Simple stick figure comics expressing everyday frustrations and emotions."
+  },
+  {
+    "id": 10,
+    "title": "Keyboard Cat",
+    "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=400&h=400&fit=crop",
+    "year": 2009,
+    "category": "Animals",
+    "description": "Cat appearing to play an electronic keyboard, used as a 'play off' for fails."
+  },
+  {
+    "id": 11,
+    "title": "Double Rainbow",
+    "imageUrl": "https://images.unsplash.com/photo-1519401245227-39bfd1c94a7e?w=400&h=400&fit=crop",
+    "year": 2010,
+    "category": "Reaction",
+    "description": "Man's emotional reaction to seeing a double rainbow in Yosemite."
+  },
+  {
+    "id": 12,
+    "title": "Nyan Cat",
+    "imageUrl": "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=400&h=400&fit=crop",
+    "year": 2011,
+    "category": "Animals",
+    "description": "Pop-Tart cat flying through space leaving a rainbow trail."
+  },
+  {
+    "id": 13,
+    "title": "Gangnam Style",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop",
+    "year": 2012,
+    "category": "Dancing",
+    "description": "PSY's viral K-pop hit with the iconic invisible horse dance."
+  },
+  {
+    "id": 14,
+    "title": "Harlem Shake",
+    "imageUrl": "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=400&fit=crop",
+    "year": 2013,
+    "category": "Dancing",
+    "description": "Dance meme where people go wild when the bass drops."
+  },
+  {
+    "id": 15,
+    "title": "Doge",
+    "imageUrl": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400&h=400&fit=crop",
+    "year": 2013,
+    "category": "Animals",
+    "description": "Shiba Inu dog with colorful Comic Sans phrases - 'much wow, very doge'."
+  }
+]
