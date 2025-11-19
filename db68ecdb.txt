@@ -1,0 +1,2071 @@
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+           PROGRAM2: PHP CRUD+
+
+           CRUD Applicatie: My First Agenda
+           Leerjaar:                    2
+           Crebonummer:                 25604
+           Sector:                      Software Developer   1
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+INTRODUCTIE
+
+
+In leerjaar 1 hebben jullie al een keer een eenvoudige PHP CR(UD)-applicatie moeten bouwen.
+Je hebt toen alleen gewerkt aan de Create en de Read. De Update en de Delete hebben we niet
+behandeld.
+
+In deze module worden alle stappen van het maken van een CRUD-applicatie nog eens op een
+rijtje gezet. In plaats van een Maria Database maken we nu gebruik van PHPMyAdmin.
+Wel hanteren we uiteraard wel weer de filosofie om de PHP en HTML View code in twee aparte
+bestanden op te nemen!
+
+Tijdens deze module gaan jullie individueel aan de slag en maken een agenda-applicatie in PHP.
+In deze applicatie moet je afspraken en taken kunnen toevoegen, maar ook aanpassen en
+verwijderen. En natuurlijk moet je de afspraken overzichtelijk op het scherm zien.
+
+Een applicatie die bovenstaande taken kan uitvoeren, noemen we een CRUD-applicatie (Create,
+Read, Update en Delete). De volledige applicatie wordt gemaakt in PHP. Als je niet meer weet
+hoe je ook alweer een PHP-applicatie maakt, kijk dan nog eens naar de readers uit leerjaar 1.
+
+De basisuitleg voor deze module is terug te vinden op LinkedIn:
+https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics
+Er worden hier nog andere tutorials genoemd die ook uitleg geven over de lesstof.
+En natuurlijk kan je ook zelf op zoek gaan naar uitleg over de diverse onderdelen.
+
+Aan het einde van deze module heb je voor jezelf een eenvoudige, overzichtelijke agenda-
+applicatie gemaakt. Denk daarbij ook een beetje aan de vormgeving, alles moet er netjes en
+verzorgd uitzien.
+
+
+LEERDOELEN
+
+•   Ik toon gegevens vanuit een database in een applicatie.
+•   Ik voeg gegevens uit een formulier toe aan een database, en controleer de data.
+•   Ik maak binnen de applicatie een optie voor de gebruiker om gegevens te verwijderen.
+•   Ik maak binnen de applicatie een optie voor de gebruiker om gegevens te verwijderen.
+•   Ik beveilig de applicatie door middel van inlog en sessions.
+
+
+WERKWIJZE
+
+Maak op PLESK, in de map “program2”, een nieuwe map: “crud”. Hierin wordt de volledige
+applicatie gebouwd. Je hebt in totaal 5 weken om de volledige applicatie te bouwen. Hieronder
+staat de tijdsplanning.
+LET OP: Elke week bestaat uit een les van 2 uur. Zorg ervoor dat je elke week de opdrachten van
+de les maakt. Het kan dat je de opdrachten tijdens de les niet af krijgt en buiten de les verder
+moet werken.
+                                                                                                 2
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+LET OP:
+
+•   In de reader wordt de theorie uitgelegd met een oefeningen en een voorbeeldtabel: ‘agenda’.
+    Jullie maken de opdrachten met een andere tabel: kies een onderwerp dat begint met de
+    eerste letter van jouw naam.
+•   De opdrachten staan aan het eind van de reader, de bijbehorende uitleg en oefeningen
+    (theorie) staan aan het begin.
+    Bepaal zelf welke uitleg je wil lezen en welke oefeningen je wilt maken, voordat je aan de
+    opdrachten begint.
+
+
+Werk je online vanuit huis, dan moet je MySQL benaderen via https://pma.sd-lab.nl/ hiervoor heb
+je wel je inloggegevens nodig van je MySQL database; noteer die dus ergens zodat je ook thuis
+verder kunt werken aan je applicatie.
+Om je bestanden vanaf thuis op te slaan op PLESK maak je gebruik van een ftp-programma, zoals
+Filezilla.
+
+
+
+
+                                                                                              3
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+TIJDSPLANNING
+
+
+
+ LES + ONDERWERP            TIJD        OPDRACHTEN
+ Week 1, les 1.1
+ De Database                1 uur       OPDRACHT 1.1: Databasetabel en connectionscript
+
+
+ Week 1, les 1.2
+ Overzicht en detail        1 uur       OPDRACHT 1.2: Overzicht- en detailpagina
+
+ Week 2, les 2.1
+ Gegevens toevoegen         1 uur       OPDRACHT 2.1: Toevoegen
+
+ Week 2, les 2.2
+ Formuliercontrole          1 uur       OPDRACHT 2.2: Verwerkpagina: data controleren
+
+ Week 3, les 3
+ Gegevens verwijderen       2 uur       OPDRACHT 3: Verwijderpagina
+
+ Week 4, les 4
+ Gegevens aanpassen         2 uur       OPDRACHT 4: Aanpaspagina
+
+ Week 5, les 5
+ Inlog & beveiliging        2 uur       OPDRACHT 5: Inlog en sessions toevoegen
+
+ Uitloop & Extra
+ Verdieping                             EXTRA OPDRACHT: Verdieping
+
+
+
+
+                                                                                          4
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+                                   THEORIE
+
+LES 1.1 – DE DATABASE
+
+In deze module gaan jullie gebruik maken van gegevens die opgeslagen worden in een database.
+
+
+WAT IS EEN DATABASE?
+
+
+Een database is een verzameling van gegevens die digitaal en gestructureerd worden bewaard:
+in tabellen.
+
+Wat een database is, kan je lezen op de volgende website:
+  • https://informaticalessen.be/gegevensbeheer/wat-is-een-database/
+
+Oefening 1_A:
+Lees de informatie op bovenstaande website door.
+Maak de bijbehorende puzzel:
+   •   https://informaticalessen.be/wp-content/oefeningen/gegevensbeheer/kruis.htm
+
+Zoek zelf nog een andere tutorial waar je kan leren wat een database is en hoe die is opgebouwd.
+
+
+SQL
+
+Om gegevens in een database te kunnen benaderen (toevoegen, uitlezen, aanpassen of
+verwijderen), gebruiken we een speciale taal: SQL (Structured Query Language). Met deze taal
+kan je via queries (vragen/opdrachten) de database benaderen.
+Deze taal heeft verschillende ‘dialecten’, oftewel versies. Zoals PostgreSQL, SQLite en MySQL.
+En dan heb je ook nog NoSQL-databases….
+PHP gebruikt MySQL om databasegegevens te benaderen.
+
+Neem de volgende tutorials door om meer te leren over SQL en MySQL:
+   • https://icttrainingen.nl/blog/wat-is-sql
+   • https://programmeerplaats.nl/wat-is-mysql/
+
+
+
+Een database die via MySQL te benaderen is, noemen we een MySQL-database.
+Jullie hebben de mogelijkheid om via PLESK een MySQL-database te maken. Daarvoor gebruiken
+we een database management system (DBMS): PHPMyAdmin.
+
+                                                                                                 5
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+PHPMYADMIN
+
+Om gebruik te kunnen maken van een database moeten we er eerst eentje maken.
+Het maken van een database doe je in een speciale (online) omgeving of programma.
+Wij gebruiken PHPMyAdmin:
+    • https://www.phpmyadmin.net/
+    • https://www.phpmyadmin.nl/wat-is-phpmyadmin/wat-is-phpmyadmin
+
+Op LinkedIn is een volledige PHPMyAdmin tutorial te vinden:
+   • https://www.linkedin.com/learning/learning-phpmyadmin/welcome?u=36995692
+Neem minimaal de volgende lessen door om meer over PHPMyAdmin te leren:
+   • Introduction – Welcome
+   • Hoofdstuk 1: What phpMyAdmin Does
+
+Via PLESK (https://web03.sd-lab.nl:8443/) kan je naar jouw eigen PHPMyAdmin navigeren en zelf
+een database maken.
+Omdat PLESK haar eigen manier voor het maken van een database heeft, kan je hiervoor gebruik
+maken van een stappenplan.
+
+
+OEFENING 1.1.1 – EEN DATABASE MAKEN
+
+
+Open het pdf-document:        “Handleiding_Plesk_SD-Lab2022.pdf”.
+Lees het hoofdstuk:            “MYSQL TOEGANG EN DATABASES”.
+
+•   Maak een database met de volgende gegevens:
+    o Database name:          123456_PROGRAM2 (Vervang 123456)
+    o Database username:      db123456
+    o New password:           ********* (Kies deze zelf. Tip: PLESK-wachtwoord)
+
+•   Ga nu naar https://pma.sd-lab.nl/
+    Log in met jouw database-user en wachtwoord.
+    Als het goed is, opent PHPMyAdmin met jouw database in het linker venster.
+
+
+TABELLEN
+
+Zoals je al hebt kunnen lezen op https://informaticaCRUDlessen.be/gegevensbeheer/wat-is-een-
+database/ bestaat een tabel uit records (of rijen) en kolommen (of velden).
+Als je in PHPMyAdmin een nieuwe tabel maakt, dan moet je van tevoren weten uit hoeveel en
+welke kolommen de tabel bestaat.
+
+Het maken van een tabel in PHPMyAdmin kan je op één van de volgende manieren leren:
+• Tutorial:
+    https://www.homeandlearn.co.uk/php/php12p2.html
+• LinkedIn:
+
+
+                                                                                               6
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+      https://www.linkedin.com/learning/learning-phpmyadmin/choosing-the-right-column-
+      types?u=36995692 en de rest van hoofdstuk 3: ‘Creating Tables
+•     Of zoek zelf een goede tutorial over het gebruik van PHPMyAdmin.
+
+
+OEFENING 1.1.2 – EEN TABEL MAKEN EN VULLEN
+
+
+Maak de tabel crud_agenda met daarin de volgende 7 kolommen:
+
+ Naam           Type                                                   Opmerking:
+ ID             INT            Index: PRIMARY, Auto Increment (A_I)    De key, auto nummering
+ Onderwerp      VARCHAR(30)                                            Titel
+ Inhoud         TEXT                                                   Wat moet er allemaal gebeuren?
+ Begindatum     DATE                                                   Standaard de dag van vandaag
+ Einddatum      DATE                                                   Alleen datum, geen tijd
+ Prioriteit     TINYINT                                                van 1 tot 5
+ Status         ENUM           'n', 'b', 'a'                           'niet begonnen', 'bezig', 'afgerond'
+
+
+LET OP: bij VARCHAR moet je aangeven hoeveel karakters dit veld maximaal mag hebben. Dit
+kan maximaal 255 zijn. Vul onder ‘Length/Values’ dit getal in.
+Voeg 5 taken toe die jij nog moet doen. Dat kan huiswerk zijn, maar ook andere taken, zoals een
+tandartsafspraak.
+
+
+QUERIES
+
+Op LinkedIn wordt de basis van MySQL en queries uitgelegd:
+https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics/mysql-
+introduction?u=36995692
+
+In een tabel kunnen meerdere acties uitgevoerd worden. We gebruiken een query om aan te
+geven wat er moet gebeuren.
+
+De acties kunnen we verdelen in vier handelingen:
+
+ Handeling                    Omschrijving                               Query
+ Toevoegen       Create       Toevoegen van gegevens aan een tabel       “INSERT INTO tabelnaam …”
+ Lezen           Read         Lezen van gegevens uit 1 of meerdere       “SELECT * FROM tabelnaam…”
+                              tabellen
+ Aanpassen       Update       Gegevens in een tabel aanpassen            “UPDATE tabelnaam SET …”
+ Verwijderen     Delete       Verwijderen van gegevens uit een tabel     “DELETE FROM tabelnaam…”
+
+De 4 handelingen zijn dus, in het Engels: Create, Read, Update en Delete. Afgekort: CRUD.
+Als we in PHP een applicatie bouwen die al deze handelingen kan uitvoeren, noemen we dit een
+CRUD-applicatie.
+
+Hoe zien die queries er nu precies uit?
+Dat gaan we eerst bekijken in PHPMyAdmin.
+                                                                                                              7
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+CREATE
+
+Bij het maken van de tabel ‘crud_agenda’ heeft PHPMyAdmin meerdere queries uitgevoerd.
+Helaas heb je die niet kunnen zien, maar dat zijn de volgende queries geweest:
+
+
+
+
+Deze queries zal je zelf voorlopig nog niet gaan maken, maar het is goed om deze een keer gezien
+te hebben.
+
+Waarschijnlijk heb je er niet op gelet, maar bij het toevoegen van elk agenda-item is er wél een
+query getoond. Dat zag er zo uit:
+
+
+De values zullen bij jullie anders zijn.
+
+Oefening 1_B
+Neem de bovenstaande queries door en probeer voor jezelf te begrijpen wat er gebeurt.
+Wat zijn de verschillende datatypes van elk veld?
+Wat betekent ‘NOT NULL’?
+En wat gebeurt er bij ‘ADD PRIMARY KEY (‘ID’)’?
+Wat is ‘AUTO_INCREMENT’?
+
+
+READ
+
+Als je de tabel ‘verdprog1_agenda’ selecteert en je klikt op het tabblad ‘Browse’, dan verschijnen
+alle records uit de tabel op het scherm.
+Bovenaan het scherm staat een query:
+
+Oefening 1_C
+• Klik op het tabblad ‘SQL’.
+   Waarschijnlijk zie je daar bovenstaande query staan, met daarachter ‘WHERE 1’
+
+                                                                                                     8
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+•   Haal alle tekst in het SQL-venster weg en typ in:
+       SELECT * FROM crud_agenda.
+•   Klik rechts onderin op “Go”
+    Je ziet nu weer de tabel met alle gegevens op het scherm.
+•   Klik bovenin op “Show query box”
+•   Vul de query aan, zodat er staat:
+       SELECT * FROM crud_agenda WHERE ID = 2
+    Je ziet nu alleen de gegevens van het record met ID ‘2’.
+•   Probeer nu zelf alle agenda-items te tonen met prioriteit ‘3’
+
+
+
+UPDATE
+Het aanpassen van een record in een tabel gaat via een UPDATE-query.
+
+Oefening 1_D
+• Zorg dat in PHPMyAdmin de tabel crud_agenda zichtbaar is.
+• Klik voor één van de records op ‘Edit’.
+
+
+
+
+•   Pas één of meerdere gegevens aan en klik op ‘Go’.
+    De tabel verschijnt weer met de aangepaste gegevens.
+
+Bovenin het venster zie je de UPDATE-query:
+
+
+
+
+DELETE
+Voor het verwijderen van een record wordt de DELETE-query gebruikt.
+
+Oefening 1_E
+• Zorg dat in PHPMyAdmin de tabel crud_agenda zichtbaar is.
+• Klik voor één van de records op ‘Delete.
+
+
+
+
+•   In een pop-up venster wordt een bevestiging gevraagd.
+    Je ziet ook de DELETE-query die uitgevoerd gaat worden.
+
+
+
+                                                                       9
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+    Klik op ‘OK’.
+    De tabel verschijnt weer met de aangepaste gegevens.
+
+
+EXTRA UITLEG
+Bekijk de volgende tutorials voor meer uitleg over SQL-queries:
+• https://www.youtube.com/watch?v=AY-7mVO4jSU
+• https://gkoetsier.nl/tut_mysql.html
+    (uitgebreid, maar zoek naar de juiste queries)
+
+
+Oefening 1_F
+De volgende tutorial heeft de mogelijkheid om queries te oefenen op de website:
+      https://www.mysqltutorial.org/basic-mysql-tutorial.aspx
+Neem in ieder geval de volgende hoofdstukken door:
+• Section 2. Querying data
+    o https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx
+• Section4. Filtering data
+    o https://www.mysqltutorial.org/mysql-where/
+• Section 10. Modifying data in MySQL
+    o https://www.mysqltutorial.org/mysql-where/
+    o https://www.mysqltutorial.org/mysql-update-data.aspx
+    o https://www.mysqltutorial.org/mysql-delete-statement.aspx
+
+Klik op de                   knop om te oefenen met de queries.
+
+
+
+
+                                                                                  10
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+PHP EN DE DATABASE
+
+Nu gaan we de eerste stappen zetten om een CRUD-applicatie te bouwen.
+Het is uiteindelijk de bedoeling dat we alle handelingen om de tabel aan te passen via PHP gaan
+uitvoeren.
+
+De theorie uit dit hoofdstuk, en de volgende hoofdstukken, is ook terug te vinden in de
+volgende tutorials:
+ •   https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics
+     (Hoofdstuk 5, 6 en 7)
+ •   https://www.w3schools.com/php/php_mysql_connect.asp
+ •   https://www.tutorialrepublic.com/php-tutorial/php-mysql-introduction.php
+
+
+
+
+CONNECTION SCRIPT
+
+
+Het eerste dat we nodig hebben is een verbinding vanuit PHP naar de database.
+
+We maken net als in Leerjaar 1 gebruik van PDO, waarom je kiest voor MySQLi of PDO kan je hier
+vinden, echter omdat we ook vorig jaar gebruik hebben gemaakt van PDO zetten we dat liefst
+voort. Eerder werkte we met een SQLite (lokale) database file. De connectie die we daarvoor
+maakte werkt niet voor MySQL. Om deze te laten werken moeten we de connectie aanpassen.
+
+
+Meer informatie over de verschillende manieren van verbinden kan je hier vinden:
+https://www.w3schools.com/php/php_mysql_connect.asp
+
+We gebruiken NIET de MySQLi varianten, maar die van PDO!
+
+Je ziet dat er een stukje PHP-code nodig is om een verbinding te maken met de database.
+Daarin worden 4 eigenschappen voor de verbinding vastgelegd:
+
+
+     •   $db_hostname = De naam van de server waar de database staat.
+     •   $db_username = De naam van de eigenaar van de database (jouw gebruikersnaam).
+     •   $db_password = Het wachtwoord van de eigenaar.
+     •   $db_database = De naam van de database.
+
+
+Daarna wordt er een mysqli-functie uitgevoerd om de verbinding te maken.
+Deze verbinding wordt ‘bewaard’ in de variabele $mysqli. (Dit is eigenlijk een object.)
+
+
+
+
+                                                                                                  11
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+OEFENING 1.1.3 – HET CONNECTION SCRIPT
+
+Allereerst:
+    1. Ga naar PLESK: https://web03.sd-lab.nl:8443/. (Of uiteraard via FileZilla of PHPStorm!)
+    2. Maak in de rootmap (‘Files -> httpdocs’) de map PROGRAM2 aan en daarin de map crud.
+
+Daarna:
+   3. Maak de PHP-pagina ‘config.php’ aan.
+   4. Zet daarin onderstaande code.
+      LET OP: vul jouw gegevens in!
+
+
+
+
+   5. Sla de pagina op en upload deze naar de map crud.
+
+Als laatste:
+    6. Test de pagina door deze te openen in de browser. (https://123456.stu.sd-
+        lab.nl/PROGRAM2/crud/config.php). Als het goed is, krijg je de melding dat de verbinding
+        is gemaakt.
+
+LET OP: als het connectie script goed werkt, dan verwijder je de “Connected successfully”
+boodschap! Er hoeft niet elke keer een melding op het scherm te verschijnen dat de verbinding is
+gemaakt.
+
+
+
+
+                                                                                                 12
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+CONNECTION SCRIPT: ERRORS TONEN
+
+De webserver van school is zo ingesteld dat PHP-fouten niet worden getoond. Dit is gedaan
+vanwege de veiligheid: als een gebruiker fouten in de code kan lezen, dan zou hij/zij hier misbruik
+van kunnen maken.
+Als developer is het juist fijn als die fouten wél getoond worden. Gelukkig kan dat door een aantal
+regels code toe te voegen; dit doen we in het bestand ‘config.php’. Omdat dit bestand in (bijna)
+alle PHP-pagina’s wordt bijgevoegd (included) kunnen we zo op al deze pagina’s de fouten tonen.
+LET OP: als een webapplicatie klaar is en opgeleverd wordt aan de klant, dan moet je deze regels
+(voor de veiligheid) weer verwijderen uit de code!
+
+Er zijn meerder opties om foutmeldingen te tonen. Zoek maar eens op Internet naar “PHP error
+reporting”. Wij gebruiken de volgende regels:
+
+       ini_set('display_errors', 1);
+       error_reporting(E_ALL);
+
+
+OEFENING 1.1.4 – ERRORS TONEN VIA HET CONNECTION SCRIPT
+
+   1. Open het bestand ‘config.php’
+   2. Zet bovenstaande regels helemaal bovenaan in de pagina:
+
+
+
+
+                                                                                                 13
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 1.2 – OVERZICHTS- EN DETAILPAGINA
+
+Tijdens de vorige les heb je een connectionscript gemaakt.
+Deze ga je nu gebruiken om gegevens uit de database te halen en te tonen in een
+overzichtspagina.
+
+GEGEVENS UITLEZEN
+
+Neem de volgende tutorials door:
+   • https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-
+      basics/retrieve-data
+      & https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-
+      basics/work-with-retrieved-data
+   • https://www.w3schools.com/php/php_mysql_select.asp
+       (Example (MySQLi Procedural)
+
+Zoals je hebt kunnen zien in de tutorial bestaat het gebruik van queries in PHP uit een aantal
+stappen:
+   1. Maak verbinding met de database.
+   2. Maak een query en voer die uit.
+   3. Doe iets met het resultaat van de query.
+   4. Sluit de verbinding.
+
+De query die gebruikt wordt om gegevens uit een tabel te lezen, “SELECT …”, heb je ook al in
+hoofdstuk 1 gebruikt.
+
+Bij het uitlezen van gegevens uit een tabel worden de volgende PDO-acties gebruikt:
+    •
+        prepare(): bereid de selectie query voor zodat deze later kan worden uitgevoerd.
+        https://www.w3schools.com/php/php_mysql_select.asp
+
+   •
+       execute() : voert de query statement (vandaar ook de variabele naam $stmt) uit.
+
+
+   •
+       fetchAll(): Haal alle resultaten op en sla deze op in een array met de naam $resultaten.
+
+
+   •
+       count(): Telt het totaal aantal resultaten.
+
+   •
+       Middels de foreach kunnen we alle regels in het resultaat doorlopen.
+       Om per regel dan de velden uit de database te gebruiken passen we het volgende toe:
+                     waarbij het ‘id’ overeenkomt met de naam van de kolom die je wilt uitlezen.
+
+                                                                                                  14
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+OEFENING 1.2.1 – DE OVERZICHTSPAGINA MAKEN
+
+In deze opdracht ga je de gegevens van de tabel crud_agenda uitlezen en deze tonen in een PHP-
+pagina.
+
+   1. Maak twee nieuwe PHP-pagina’s aan: agenda.php & agenda_view.php.
+   2. Neem onderstaande code over in ‘agenda.php’.
+
+
+
+
+   3. Neem onderstaande code op in ‘agenda_view.php’. Maak uiteraard eerst zelf de
+      benodigde HTML-elementen op.
+
+       Maak daarna een eenvoudig overzicht met daarin de gegevens uit de tabel zoals
+       onderstaand:
+
+
+
+
+                                                                                            15
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+   4. Sla de pagina ‘agenda.php’ op en upload deze in de map ‘crud’ op de webserver
+      Sla de pagina ‘agenda_view.php’ op en upload deze in de sub-folder ‘views’ op de
+      webserver. Jouw project map ziet er ongeveer zo uit:
+
+
+
+
+   5.   Test de pagina.
+        Als het goed is, zie je van alle agenda-items het onderwerp en de inhoud op het scherm.
+
+   Als je een fout maakt in de query dan verschijnt er niks op het scherm. Er zal ook geen
+   foutmelding verschijnen, ondanks de error-reporting in jouw config.php.
+   Daarom voegen we een extra stukje code toe om de SQL-fouten te tonen:
+
+   6. Pas de code van jouw ‘agenda.php’ pagina aan en zorg ervoor dat je een Try-Catch blok
+      toevoegt zoals onderstaand afgebeeld.
+
+
+
+
+                                                                                                  16
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+       Indien je de query nu zou aanpassen en een verkeerde tabel naam zou gebruiken, dan zie
+       je nu netjes onderstaande foutmelding:
+
+
+
+
+       LET OP: Ook hiervoor geldt: deze code is eigenlijk alleen voor de developer; een bezoeker zou een getoonde
+       foutmelding kunnen misbruiken.
+
+
+
+OEFENING 1.2.2: DE OVERZICHTSPAGINA VERBETEREN
+
+Zorg ervoor dat alle gegevens overzichtelijk op het scherm getoond worden. Dit kan met
+bijvoorbeeld divjes (en een css grid) maar bij voorkeur in een tabel.
+
+   1. Open ‘agenda_view.php’.
+   2. Verbeter de weergave van de gegevens.
+      Je mag zelf een structuur bedenken.
+   3. Maak gebruik van een CSS framework naar keuze om e.e.a. er mooi uit te laten zien!
+   4. Sla de pagina op, upload deze naar jouw webmap ‘crud/views’ en test de pagina.
+
+Dat zou er dan ongeveer zo uit kunnen zien:
+
+
+
+
+DETAILPAGINA
+
+Niet alle gegevens van een agenda-item zijn zichtbaar. De rest van de gegevens zullen worden
+getoond op een detailpagina.
+
+Neem nu eerst de volgende tutorials door:
+   • http://html.net/tutorials/php/lesson10.php (“Passing variables in a URL”)
+
+                                                                                                              17
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+   •   https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics/find-a-
+       single-record?u=36995692 (“Find a single record”)
+
+Om de juiste gegevens van elk agenda-item op de detailpagina te tonen, moet het volgende
+gebeuren:
+   • Op de overzichtspagina krijgt elk item een link naar de detailpagina (Zie voorbeeld in de
+      “Actie” kolom in de tabel).
+   • In de link wordt de ID van het item meegestuurd.
+      (Deze staat in de key-kolom van de tabel).
+   • Op de detailpagina wordt de ID uit de url gehaald met $_GET[..].
+   • Met de juiste query worden de details van het agenda-item uit de database gehaald.
+   • De gegevens worden getoond in een apparte details_view.
+
+
+
+
+OEFENING 1.2.3: DE DETAILPAGINA MAKEN
+
+In deze opdracht ga je de detailpagina maken en een link maken op de overzichtspagina.
+
+   1. Open 'agenda_view.php’
+   2. Voeg voor elk item de volgende link toe:
+
+
+   3. Maak de pagina ‘agenda_detail.php’ aan.
+   4. Zet de volgende code in deze pagina:
+
+
+
+
+   5. Sla de pagina op
+   6. Upload beide pagina’s naar de webserver en test de link van een item uit de
+      overzichtspagina.
+
+       Als het goed is, verschijnt de detailpagina met de volgende tekst:
+
+
+
+       En in de adresbalk van de browser staat:
+
+
+
+
+                                                                                                 18
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+   Het maakt nu niet uit op welk item je klikt; altijd verschijnt het getal 2.
+   Nu gaan we ervoor zorgen dat de juiste ID wordt meegestuurd.
+
+   7. Pas de detail-link op de overzichtspagina aan. De ‘2’ wordt vervangen door de ID van het
+      item. Let goed op de aanhalingstekens!!
+
+
+
+   8. Test opnieuw en controleer of de juiste ID wordt getoond op de detailpagina.
+
+   Op de detailpagina moet nu een query geschreven worden, die de gegevens van alleen dit
+   agenda-item toont.
+
+   9. Neem alle code uit “agenda.php” over en kopieer deze naar jouw “agenda_detail.php”
+      pagina. Lees in deze code eerst weer het “ID” uit de URL middels de $_GET[‘ID’]:
+
+
+
+
+       Deze $ID ga je nu gebruiken in je Query string door een extra “WHERE ID = ” toe te
+       voegen. Dat doe je door wat extra code toe te voegen.
+
+
+
+
+       Let OP!! We voegen het $ID NIET direct toe aan de $query, maar doen dit door $ID aan :ID
+       te ‘binden’. Dit doen we op regel 11. Dit voorkomt zogenaamde SQL injectie aanvallen!
+
+   10. Vergeet uiteraard niet ook een “agenda_detail_view.php” pagina aan te maken.
+       Ook daar kan je mogelijk veel van je bestaande agenda_view pagina hergebruiken!
+
+   11. Upload en test de pagina’s.
+
+   12. Verbeter de opmaak van de detailpagina.
+
+
+
+                                                                                                 19
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 2.1 – GEGEVENS TOEVOEGEN
+
+In het vorige hoofdstuk zijn we begonnen met het Read-gedeelte uit de CRUD-applicatie.
+In dit hoofdstuk gaan we het Create-gedeelte bouwen.
+Het is mogelijk om vanuit jouw PHP-pagina volledige databasetabellen te maken, maar dat doen
+we nu niet. We gaan alleen een bestaande tabel vullen met gegevens.
+Of beter nog: we laten een gebruiker de gegevens invoeren. Hiervoor gebruiken we een formulier.
+Het formulier wordt verwerkt in PHP door een aparte verwerkpagina.
+
+De INSERT-queries die in dit hoofdstuk gebruikt worden, zijn al behandeld in Les 1.
+
+Neem nu eerst de volgende tutorials door:
+   • https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics/use-
+      form-data-to-create-records?u=36995692
+   • https://www.tutorialrepublic.com/php-tutorial/php-mysql-insert-query.php
+
+
+
+TOEVOEGPAGINA MAKEN MET PHP
+
+De query die gebruikt wordt om een record met gegevens toe te voegen aan een tabel heeft de
+volgende structuur:
+
+       INSERT INTO tabel (kolom1, kolom2, …) VALUES (waarde1, waarde2, …)
+
+Het spreekt voor zich dat waarde1 in kolom1 terecht komt, waarde2 in kolom 2, enzovoort.
+LET OP: elke waarde moet tussen aanhalingstekens staan als de kolom een tekst of datum bevat
+(VARCHAR, TEXT, DATE, ENUM, …).
+Bij INT (of DOUBLE) hoeven er géén aanhalingstekens om de waarde gezet te worden.
+
+
+
+
+                                                                                              20
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+OEFENING 2.1.1: EEN STATISCHE TOEVOEGPAGINA MAKEN
+
+Stap 1 is: maak eerst een toevoegpagina zonder formulier. We bepalen zelf welke gegevens we
+willen toevoegen aan de database en zetten die rechtstreeks in de PHP-code.
+
+   1. Maak een nieuwe PHP-pagina: “agenda_toevoegen_verwerk.php”.
+   2. Zet daarin de volgende code (met comments!):
+      Bepaal zelf de waarden (‘VALUES’) die je in de tabel wilt zetten
+
+
+
+
+   3. Sla de pagina op en test deze op de server.
+   4. Controleer of het record is toegevoegd.
+
+Opmerkingen:
+  • De ID wordt niet genoemd.
+     Dat hoeft ook niet, want die is ingesteld op autonummering (auto increment).
+  • Zoals je ziet, staan alle VALUES aangegeven met :onderwerp omdat dit placeholders zijn.
+  • In de execute() wordt een array van parameter bindings aangegeven die de :onderwerp
+     ‘bind’ aan de waarde die we erin willen zetten.
+
+
+                                                                                              21
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+   •   Je ziet dat alle parameters tussen ‘’ quotes staan omdat het string types zijn.
+       Behalve Prioriteit, want dat is in de tabel een INT.
+   •   Het is een toevoegquery, dus je leest geen gegevens uit.
+       Toch krijg je een resultaat:
+       Dit resultaat geeft aan of het toevoegen is gelukt (‘true’) of niet (‘false’).
+       In de if()-statement controleer je of $stmt->rowCount() gelijk is aan ‘true’.
+   •   Als het toevoegen niet is gelukt, zorgen we ervoor dat er een foutmelding op het scherm
+       komt middels de try/catch methode.
+   •   Natuurlijk willen we controleren of het toevoegen gelukt is, vandaar een link terug naar de
+       overzichtspagina.
+
+
+Je ziet dat de toevoegquery zo lang is dat deze langer is dan één regel.
+Om de code overzichtelijk te houden kan je de query in stukken knippen en stuk voor stuk
+toevoegen aan de query:
+
+
+
+
+LET OP: Op de eerste regel begin je de query:            ‘$query = …’;
+     Op de volgende regel voeg je iets toe aan de query: ‘$query .= … ‘; (let op de punt!)
+
+EN:     Let op de spaties aan het begin van elke volgende regel.
+        Anders wordt de code zonder spaties aan elkaar geplakt.
+
+
+Je kan de query schrijven zonder de kolomnamen te noemen:
+
+
+
+Let dan wel goed op de volgorde van de values; deze moet precies overeenkomen met die in de
+tabel. Én: je moet aangeven dat de eerste kolom niet door jou wordt ingevuld, dus daar plaats je
+een NULL.
+
+
+TOEVOEGFORMULIER
+
+Met bovenstaande methode kan de gebruiker nog steeds niet zelf gegevens toevoegen; de
+applicatie is daardoor nog niet erg dynamisch.
+De volgende stap is daarom het maken van een toevoegformulier.
+De gegevens die de gebruiker invult worden in de database gezet via een verwerkpagina.
+Je moet dus 3 pagina’s maken:
+
+
+   •   De pagina “agenda_toevoegen.php” (Bevat vooralsnog alleen een include naar de view!)
+   •   De ‘view’ pagina “agenda_toevoegen_view.php” in de map ‘views’. (Bevat het daadwerkelijke HTML FORM)
+   •   De verwerking van de POST data gebeurt in “agenda_toevoegen_verwerk.php”. (Deze pagina heb je net al
+       gemaakt)
+
+
+                                                                                                         22
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+OEFENING 2.1.2: HET TOEVOEGFORMULIER
+
+Maak een pagina “agenda_toevoegen_view.php”.
+Plaats hierin een formulier waarmee de gebruiker de gegevens van een agenda-item kan invullen.
+Bedenk zelf wat voor inputvelden je het beste kan gebruiken; geef ze de volgende namen:
+   •   onderwerpVeld
+   •   inhoudVeld
+   •   begindatumVeld
+   •   einddatumVeld
+   •   prioriteitVeld
+   •   statusVeld
+
+Het is wel logisch dat je bijvoorbeeld voor de datum een datumveld (‘date’) gebruikt.
+Zorg ervoor dat de gebruiker alle velden moet invullen.
+Het formulier wordt verstuurd naar toevoegVerwerk.php.
+
+LET OP: alle velden moeten een naam (‘name=’) hebben. Deze namen worden door PHP gebruikt
+op de verwerkpagina.
+
+Het formulier zou er bijvoorbeeld zo uit kunnen zien:
+
+
+
+
+                                                                                            23
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+Hierbij een stukje van de code van bovenstaand formulier:
+
+
+
+
+VERWERKINGSPAGINA
+
+Het formulier wordt verstuurd naar de verwerkpagina:
+
+
+Deze verwerkpagina gaan we nu maken. Op de verwerkpagina worden alle formuliervelden
+uitgelezen. Dat gebeurt met de volgende code: $_POST[‘naamVeld’]
+
+
+
+
+                                                                                       24
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+OEFENING 2.1.3: DE TOEVOEG-VERWERKPAGINA
+
+   1. Maak een nieuwe PHP-pagina: “agenda_toevoegen_verwerk.php”.
+   2. Zet de volgende code in de pagina:
+
+
+
+
+       Om te testen of alle velden + inhoud worden verstuurd, gebruiken we de testcode
+       ‘print_r($_POST)’. Hiermee wordt in één keer alle inhoud van de $_POST-array (!)
+       getoond.
+
+   3. Sla de pagina op en upload het formulier en de verwerkpagina.
+   4. Test de verwerkpagina door het formulier in te vullen en op de submitknop te drukken. Als
+      het goed is, opent de verwerkpagina en zie je de namen van de velden en de ingevoerde
+      waarden (“[naamVeld]=>inhoud”). Bijvoorbeeld:
+
+
+
+
+   Als dit werkt dan kunnen we de volgende stap maken: alle velden apart uitlezen en een
+   (dynamische) toevoegquery schrijven.
+
+   5. Haal de TEST uit het if-statement en zet de volgende code daarvoor in de plaats:
+         a. Deel 1, tot het uitlezen van alle velden:
+
+
+
+
+                                                                                             25
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+           b. …Deel 2, het toevoegen aan de database:
+
+
+
+
+   Je ziet dat eerst alle formuliervelden worden uitgelezen. De waarden van de velden worden in
+   variabelen gestopt. Die variabelen (dus: de waarden uit het formulier) worden gebruikt in de
+   query.
+   LET OP: er is nog geen beveiliging op de invoer van de data toegepast. Dit gebeurt in het
+   volgende hoofdstuk
+
+   De variabelen worden toegevoegd aan de query en de query wordt uitgevoerd.
+
+   Aan het eind wordt de bijbehorende view ge-include. Op deze view wordt het resultaat
+   getoond.
+
+   6. Maak zelf de bijbehorende resultaatpagina: agenda_toevoegen_verwerk_view.php.
+      Zorg dat het resultaat van de verwerkpagina netjes wordt getoond.
+      Maak ook een terugknop naar de overzichtspagina.
+      Je kan er ook voor kiezen om de gebruiker direct terug te sturen naar de overzichtspagina als
+      het toevoegen is gelukt. Alleen als er iets fout is gegaan, wordt de view getoond.
+
+   7. Sla beide pagina’s op en test het toevoegen.
+
+
+
+
+                                                                                                  26
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 2.2 – FORMULIERCONTROLE
+
+Alle gegevens kunnen aan de database worden toegevoegd via een formulier en een
+verwerkpagina. Waarschijnlijk heb je een HTML5-formulier gemaakt waarbij je de velden
+controleert op juiste waarden. Zo ka je ervoor zorgen dat de gebruiker alleen maar een datum in
+kan vullen bij de begindatum en bij prioriteit alleen maar een getal van 1 tot 5.
+Kijk voor deze mogelijkheden nog eens op, bijvoorbeeld:
+
+   •   https://www.w3schools.com/html/html_form_input_types.asp
+   •   https://www.w3schools.com/html/html_form_attributes.asp
+
+Maar deze manier van ‘beveiligen’ is niet optimaal. De gebruiker kan via de inspector van de
+browser de attributen van de velden aanpassen. Daarom moet je in de php-code van de
+verwerkpagina alle invoer nog eens goed controleren, zodat er geen verkeerde data in de
+database terecht komt.
+
+In deze les worden een aantal voorbeelden genoemd van beveiliging van het toevoeg formulier.
+Kijk zelf op internet hoe je de gegevens uit het formulier nóg beter kan controleren.
+
+
+CONTROLEER DE HERKOMST VAN HET FORMULIER
+
+Het eerste dat je op de verwerkpagina doet, is controleren of het juiste formulier is verstuurd.
+Dit kan op een aantal manieren:
+
+• Controleer of er op de juiste
+   knop is geklikt.
+   Deze code controleert of er een ‘POST’
+   is verstuurd naar de huidige pagina.
+
+Maar elke pagina kan een ‘POST’ naar jouw verwerkpagina sturen, dus je zal nog meer controles
+moeten uitvoeren
+
+• Controleer of alle velden zijn
+   meegestuurd.
+   Een uitbreiding op bovenstaande is een check op
+   alle velden, en niet alleen de knop:
+
+
+
+
+Kijk voor uitgebreidere voorbeelden van “isset()” op internet. Bijvoorbeeld:
+       https://www.folkstalk.com/tech/php-isset-form-submit-with-code-examples/
+Je kan ook gebruik maken van “empty()” in plaats van “isset()”:
+       https://www.htmlcenter.com/blog/empty-and-isset-in-php/
+
+                                                                                                   27
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+• HTTP_REFERER
+  Als je POST data ontvangt kun je checken wie de “afzender” of “referer” is. Hoewel dit door
+  een slimme hacker wel te faken is, is het wel een goed idee om dit in ieder geval te controleren.
+  In PHP vind je de referer in de superglobal array $_SERVER:
+
+
+   Hiermee kun je, voordat je een formulier gaat verwerken, eerst controleren of de referer wel
+   klopt met wat je verwacht.
+
+
+
+
+   LET OP: er wordt een uitroepteken ! gebruikt om te controleren of de afzender NIET gelijk is aan het adres.
+
+
+• (VERDIEPING:) Gebruik een CSRF token
+  CSRF of “Cross-Site Request Forgery” is een techniek die hackers gebruiken om “mee te liften”
+  met gebruikers van jouw applicatie. Hierbij wordt bijvoorbeeld een script gebruikt dat, terwijl
+  de gebruiker in ingelogd, allerlei requests naar jouw applicatie stuurt.
+  De meestgebruikte techniek om dit te voorkomen is bij het laden van een formulier een
+  random code of “token” te maken en deze mee te sturen in een session én in het formulier. Op
+  de verwerkpagina worden deze twee waarden met elkaar vergeleken. Als ze niet hetzelfde zijn,
+  dan is er iets fout gegaan.
+
+   Bovenaan de formulierpagina (‘agenda_toevoegen_view.php’) plaats je de volgende code:
+
+
+
+
+   Op de tweede regel wordt een lange random code gegenereerd.
+   Op de derde regel wordt de code in een sessie gezet. De sessie wordt gestart op regel 1.
+
+   Ín het formulier plaats je een “hidden field”:
+
+
+
+
+   Op de verwerkpagina controleer je of de token in de sessie is meegestuurd én of deze sessie-
+   token hetzelfde is als deze uit het formulier:
+
+
+
+
+                                                                                                                 28
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+Voor meer uitleg over CSRF kan je kijken op
+  https://www.remcoboon.nl/cross-site-request-forgery-csrf/
+Voor het gebruik van een CSRF token zijn op internet diverse voorbeelden te vinden.
+  Bijvoorbeeld: https://www.phptutorial.net/php-tutorial/php-csrf/
+
+
+CONTROLEER DE WAARDEN UIT DE VELDEN
+
+Nu je weet dat het juiste formulier is binnengekomen, ga je de waarde van elk veld controleren.
+Hieronder vind je een aantal voorbeelden. Zoek op internet als je een andere controle nodig hebt
+of wilt gebruiken.
+
+
+• Controleer of de velden niet leeg zijn.
+  Je kan controleren of een veld leeg is met de functie “empty()”:
+
+
+
+
+   Er zijn nog andere manieren om te checken of een inputveld (of variabele) leeg is.
+   Dit kan je o.a. teruglezen op
+   https://www.slingacademy.com/article/php-ways-to-check-if-a-string-is-empty/
+
+   LET OP: er is verschil tussen de functies “isset()”, “empty()” en “is_null()”. Je kan ze dus niet
+   zomaar door elkaar gebruiken.
+   Kijk maar eens op https://phppot.com/php/isset-vs-empty-vs-is_null/
+
+
+• Controleer of een waarde een getal is.
+  Hieronder wordt gecontroleerd of $cijfer geen getal is, kleiner dan 1 is of groter dan 10:
+
+
+
+
+   Andere opties om te checken op een getal vind je hier: https://www.geeksforgeeks.org/how-
+   to-check-if-string-contains-only-numeric-digits-in-php/
+
+
+                                                                                                       29
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+• Controleer of een waarde een datum is.
+  Het controleren op datum is wat ingewikkelder. Er zijn verschillende manieren; hier vind je er
+  één:
+
+
+
+
+   Er bestaat in PHP ook een functie “checkdate()”. Maar dan moet je jaar, maand en dag apart
+   invoeren.
+   Kijk maar eens op https://www.geeksforgeeks.org/php-checkdate-function/
+   Op de volgende pagina vind je nog meer informatie over controle op datum:
+   https://www.slingacademy.com/article/php-how-to-check-if-a-date-is-in-a-valid-format/
+
+• Controleer of de waarde een email is.
+  PHP heeft een aparte functie om te controleren op (o.a.) email. Hier een voorbeeld:
+
+
+
+
+   Meer uitleg over de functie “filter_var()” en het gebruik ervan vind je o.a. op:
+   https://www.geeksforgeeks.org/php-filter_var-function/
+
+
+Er zijn nog diverse andere manieren om de waarde uit een formulier te controleren. Daarvoor kan
+je zelf op zoek gaan op internet.
+
+
+
+
+                                                                                                   30
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+REGULIERE EXPRESSIES
+
+Soms is er geen speciale functie om te controleren of de waarde voldoet aan bepaalde eisen.
+Denk aan een postcode; die moet bestaan uit precies 4 letters en daarna 2 cijfers.
+Om te controleren of de waarde aan een bepaald patroon voldoet, gebruik je reguliere expressies,
+oftewel RegEx.
+Hieronder een paar voorbeelden:
+
+   •   RegEx voor het emailadres van een GLR-student: [0-9]{6}@glr\.nl
+       Dit betekent:
+
+           o Een getal tussen 0 en 9
+           o Dat 5 keer (dus vijf getallen)
+           o Gevolgd door de letterlijke tekst “@glr.nl” (de backslash voor de punt betekent dat
+             de punt als letterlijk leesteken gezien moet worden, anders heeft de punt een
+             functie in de “taal” RegEx).
+
+   •   RegEx voor een postcode:         [1-9][0-9]{3} [A-Z]{2}
+       Dit betekent:
+
+           o   Een getal van 1 tot en met 9 (dus niet 0)
+           o   Daarna drie getallen waarvan (0 t/m 9)
+           o   Gevolgd door een spatie
+           o   Gevolgd voor twee hoofdletters
+
+In PHP kan je dit als volgt toepassen:
+
+
+
+
+Zoek op internet hoe je de functie “preg_match()” verder kan gebruiken.
+Bijvoorbeeld op:
+
+   •   https://www.w3schools.com/php/func_regex_preg_match.asp
+   •   https://www.w3schools.com/php/php_regex.asp
+
+
+
+SPECIALE TEKENS FILTEREN
+
+Als alle invoer voldoet aan de eisen, kan je deze gaan wegschrijven naar de database.
+Daarbij moet je er wel voor zorgen dat er geen vreemde tekens en (javascript-)code
+weggeschreven wordt. Daarnaast zou iemand door middel van SQL-injection jouw database
+kunnen aanpassen of uitlezen.
+Kijk maar eens op https://www.avg.com/nl/signal/sql-injection
+
+                                                                                              31
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+Pas in ieder geval onderstaande technieken toe om de formulierdata op te schonen:
+
+
+
+
+Hieronder volgen nog een aantal functies die je kan gebruiken om data op te schonen.
+LET OP: sommige functies zijn misschien al verouderd (‘deprecated’) en kan je misschien beter niet
+meer toepassen; kijk goed welke je gaat gebruiken.
+
+   •   trim()
+       Niet echt een beveiligings-functie, maar
+       wel handig: deze functie haalt alle spaties (of bepaalde tekens) voor en achter de invoer
+       weg.
+       Zie ook: https://www.geeksforgeeks.org/php-trim-function/
+
+   •   strip_tags()
+       Deze functie haalt (o.a.) de HTML-
+       tags uit de invoer.
+       Zie ook: https://www.geeksforgeeks.org/php-strip_tags-function/
+
+   •   htmlentities()
+       Alle speciale tekens in de
+       invoer worden omgezet naar ‘html-entities’.
+       Zie: https://www.w3schools.com/php/func_string_htmlentities.asp
+
+   •   htmlspecialchars()
+       Deze functie lijkt veel op de vorige.
+       Zie: https://www.geeksforgeeks.org/htmlentities-vs-htmlspecialchars-function-in-php/
+
+   •   mysqli_real_escape_string()
+       Ook deze functie haalt de
+       speciale karakters weg, maar maakt hierbij gebruik van de databasekoppeling.
+       Zie ook: https://www.geeksforgeeks.org/php-mysqli_real_escape_string-function/
+
+Om de invoer in de database extra veilig te maken, kan je diverse functies combineren.
+
+
+
+
+                                                                                                     32
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 3 – GEGEVENS VERWIJDEREN
+
+We hebben al twee letters van CRUD behandeld: ‘Create’ en ‘Read’.
+In deze les behandelen we de ‘D’: Delete. We gaan niet een hele tabel verwijderen, hoewel dit ook
+kan via PHP en de juiste queries.
+In deze les leer je hoe je een record kan verwijderen uit een tabel.
+
+
+GEGEVENS VERWIJDEREN
+
+In les 1 heb je via PHPMyAdmin records verwijderd. Elke keer als je een record verwijdert, zie je
+een pop-up-venster met daarin de volgende melding:
+
+
+
+
+In deze melding zie je een query:
+
+       DELETE FROM crud_agenda WHERE ID = 2
+
+De query is iets aangepast:
+   • De aanhalingstekens zijn weggehaald.
+      PHPMyAdmin zet deze er automatisch omheen, maar in PHP/MySQLi heb je deze niet
+      nodig.
+   • Achter ‘WHERE’ staat alleen de ID.
+      Je hoeft niet de tabel (‘crud’) te noemen, omdat bij ‘FROM’ al staat uit welke tabel je een
+      record wilt verwijderen.
+
+LET OP: er staat geen asterisk (‘*’) tussen ‘DELETE’ en ‘FROM’. Het hele record wordt verwijderd,
+dus je hoeft geen kolommen aan te geven, ook niet dat alle kolommen verwijderd moeten
+worden.
+
+Neem de volgende tutorials door:
+   • https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-
+      basics/delete-a-record?u=36995692
+   • https://www.tutorialrepublic.com/php-tutorial/php-mysql-delete-query.php
+
+We gaan nu vanuit de overzichtspagina voor elk agenda-item een link maken naar de
+verwijderpagina. In deze link wordt de ID van het item (= de key van het record) meegestuurd,
+zodat de verwijderpagina weet welk item verwijderd moet worden.
+
+
+
+
+                                                                                                    33
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+OEFENING 3.1: DE LINK MAKEN NAAR DE VERWIJDERPAGINA
+
+   1. Open de overzichtspagina (‘toonagenda.php’) in jouw editor.
+   2. Zorg dat er bij elk item een link komt te staan naar de verwijderpagina:
+      verwijder.php
+   De overzichtspagina zou er dan zo uit kunnen zien:
+
+
+
+
+   LET OP: zorg dat de ID wordt meegestuurd naar de verwijderpagina.
+   Je kan hiervoor de code gebruiken van de link naar de detailpagina.
+
+
+OEFENING 3.2: DE VERWIJDERPAGINA MAKEN
+
+   1. Maak een nieuwe PHP-pagina: ‘agenda_verwijderen.php’.
+   Je gaat niet alleen het ID weergeven, maar laat de bezoeker netjes zien om welk agenda-item
+   het gaat. Je kan hier de code van de detailpagina gebruiken
+   2. Lees de ID uit de url (net als bij de detailpagina) en stuur de bijbehorende agenda-
+       gegevens naar de view.
+   3. Maak de pagina ‘agenda_verwijderen_view.php’.
+       Laat op deze pagina in ieder geval het onderwerp van de agenda-item zien en
+       (bijvoorbeeld) begin- en einddatum.
+       Bijvoorbeeld:
+
+
+
+
+                                                                                            34
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+   4. Test of het werkt:
+      Als je op de overzichtspagina een item aanklikt, verschijnt dan op de verwijderpagina de
+      juiste gegevens?
+   5. Maak onderaan de pagina een link terug naar de overzichtspagina.
+
+   Nu gaan we eerst een extra controle inbouwen. Als iemand per ongeluk op de verwijderlink
+   heeft geklikt, dan mag het item niet direct worden verwijderd.
+
+   6.   Zet op de verwijderpagina (view) de vraag: “weet je het zeker?”.
+        Als de gebruiker op “JA” klikt, dan moet het item verwijderd worden op een nieuwe
+        pagina: ‘agenda_verwijderen_verwerk.php’.
+        LET OP: de ID moet weer worden meegestuurd naar de verwerkpagina.
+        De code zou er zo uit kunnen zien:
+
+
+
+
+                                                                                                 35
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+OEFENING 3.3: DE VERWIJDER-VERWERKPAGINA MAKEN
+
+Als de gebruiker op ‘JA’ heeft geklikt, dan mag het agenda-item echt verwijderd worden.
+Dit doen we op de verwerkpagina van de verwijderpagina.
+Ook hier lees je eerst de ID uit de url. Daarna maak je een query waarmee je het item met dat ID
+verwijdert.
+
+   1. Maak een nieuwe PHP-pagina: verwijderen_verwerk.php.
+   2. Lees de ID uit de link.
+      Als het ID niet leeg is, dan moet het item verwijderd worden
+   3. Schrijf de code om het item te verwijderen. Deze code is een combinatie van code die al
+      hebt gebruikt bij de toevoegpagina en de detailpagina:
+
+
+
+
+   4. Maak de pagina verder af:
+      - Zorg dat de query goed wordt uitgevoerd.
+      - Geef een melding als de ID leeg is (niet is gevonden)
+      - Maak een link terug naar de overzichtspagina (toonagenda.php).
+   5. Upload alle pagina’s en test het geheel.
+
+
+De basis van het verwijderen werkt nu. Maar er kan hier en daar nog wel iets worden verbeterd.
+Daarom een extra opdracht: pas onderstaande verbeteringen toe. Natuurlijk mag je de applicatie
+verder naar eigen inzicht aanpassen, zolang deze maar goed blijft werken en overzichtelijk blijft.
+
+
+OEFENING 3.4: EXTRA AANPASSINGEN
+
+Verbeter het verwijderen door de volgende onderdelen toe te voegen:
+
+                                                                                                   36
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+   1. Maak een link vanaf de detailpagina naar de verwijderpagina.
+      Zorg er daarbij voor dat het juiste item kan worden verwijderd.
+   2. Op ‘verwijder.php’ staat alleen maar de ID van een agenda-item; het is niet duidelijk over
+      welk item het gaat.
+   3. Toon op ‘verwijder.php’ ook het onderwerp en de inhoud van het agenda-item dat
+      verwijderd moet worden.
+      TIP: gebruik de code van de detailpagina.
+
+
+
+
+                                                                                               37
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 4 – GEGEVENS AANPASSEN
+
+Het laatste onderdeel van de CRUD-applicatie dat nog behandeld moet worden is de Update,
+oftewel het aanpassen van gegevens
+
+Ook deze query heb je al kunnen zien als je in PHPMyADdmin een record aanpast:
+
+
+
+
+De Update-query bestaat uit 3 onderdelen:
+• Achter ‘UPDATE’ staat de tabel die aangepast moet worden.
+• Achter ‘SET’ staan de kolommen en de nieuwe waarden; er kunnen meerdere kolommen in
+    één keer worden aangepast.
+• Achter WHERE staat de selectie: welke record(s) moeten worden aangepast? Als er maar één
+    record moet worden aangepast, dan staat hier de sleutel van de tabel (‘ID’).
+
+De query die we in PHP gebruiken ziet er iets anders uit:
+
+       UPDATE crud_agenda SET Inhoud = 'Hoofdstuk 7 afmaken' WHERE ID = 3;
+
+De meeste aanhalingstekens zijn weg, behalve (!) bij de tekst die aangepast moet worden.
+En bij WHERE is de tabelnaam verwijderd. Deze hoeft niet genoemd te worden.
+
+
+GEGEVENS AANPASSEN
+
+Neem de volgende tutorials door:
+   • https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics/use-
+      form-data-to-update-records?u=36995692
+   • https://www.tutorialrepublic.com/php-tutorial/php-mysql-update-query.php
+
+Het aanpassen van gegevens in de CRUD-applicatie bestaat uit een aantal stappen:
+   1. Via een link op de overzichtspagina kan de gebruiker een record aanpassen.
+   2. Alle gegevens van het aan te passen record verschijnen in een formulier.
+       De gebruiker bepaalt zelf welke gegevens moeten worden aangepast.
+   3. Als de gebruiker op de submit-knop klikt, worden alle gegevens op de aanpas-verwerk-
+       pagina aangepast.
+       De gebruiker krijgt een melding als het is gelukt (of niet).
+
+Bovenstaande stappen zijn, los van elkaar, ook al gebruikt bij andere onderdelen van de
+applicatie:
+   • Een link maken naar een nieuwe pagina is al gedaan bij de detailpagina.
+   • Een formulier laten verwerken is al gedaan bij de toevoegpagina.
+Deze kennis gaan we gebruiken bij het maken van de aanpaspagina.
+
+
+                                                                                             38
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+In onderstaande opdracht worden niet meer alle stappen uitgeschreven. Je kan terugkijken in de
+reader voor de verschillende stappen.
+
+
+
+
+OEFENING 4.1: LINK NAAR BEWERKPAGINA
+
+   1. Open de overzichtspagina (‘agenda.php’) in jouw editor.
+   2. Zorg dat er bij elk item een link komt te staan naar de aanpaspagina:
+      agenda_bewerken.php
+   De overzichtspagina zou er dan zo uit kunnen zien:
+
+
+
+
+   LET OP: zorg dat de ID wordt meegestuurd naar de aanpaspagina.
+
+
+OEFENING 4.1: GEGEVENS TONEN OP BEWERKPAGINA
+
+   1. Maak een nieuwe PHP-pagina: agenda_bewerken.php.
+   2. Zorg ervoor dat alle gegevens van het agenda-item onder elkaar op de view-pagina
+      getoond worden. Maak dus ook agenda_bewerken_view.php
+      Gebruik hiervoor de code van de detailpagina.
+      LET OP: zorg dat er alleen een array met gegevens naar de view wordt gestuurd. De view
+      gebruikt alleen PHP om deze array uit te lezen en te tonen.
+   3. Test de pagina.
+
+
+OPDRACHT 4.2: GEGEVENS TONEN IN EEN FORMULIER
+
+De volgende stap is het maken van het aanpasformulier in ‘agenda_bewerken_view’.
+Alle gegevens van het agenda-item moeten in de verschillende velden worden ingevuld, zodat de
+gebruiker alleen maar aanpassingen hoeft te maken.
+Het formulier dat we hebben gemaakt in de toevoegpagina kunnen we hier gebruiken.
+
+   1. Kopieer de html-code van het toevoegformulier uit ‘agenda_toevoegen_view.php’.
+      LET OP: alleen het formulier! Dus: van ‘<form>’ t/m ‘</form>’.
+
+   We gaan het formulier aanpassen.
+
+
+
+
+                                                                                             39
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+   2. Pas de gegevens van het formulier aan:
+
+
+   3. Pas de submit-button aan:
+
+
+
+   Volgende stap: alle velden vullen met de gegevens van het item.
+
+   4. Geef het eerste veld (‘onderwerp’) een value.
+      Plaats in de value de PHP-code waarmee het onderwerp wordt getoond.
+
+       Let goed op de aanhalingstekens.
+
+   5. Doe hetzelfde bij alle andere formuliervelden. Zet met PHP-code de juiste values in de
+      juiste velden.
+
+       LET OP: Als je een text area gebruikt dan moet de PHP-code tussen de begin- en einde-
+       tag van de text area staan:
+
+
+
+       EN: als je een pull down of radio buttons hebt gebruikt voor ‘Status’, dan zal je zelf moeten
+       uitzoeken hoe je hierbij de juiste waarde kan selecteren….
+
+   6. Test de pagina door op de overzichtspagina op de aanpaslink te klikken.
+      Als het goed is, verschijnt er een formulier op het scherm met daarin de gegevens van het
+      item dat is aangeklikt:
+
+
+
+
+                                                                                                 40
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+   Het enige onderdeel dat nog niet in het formulier staat, is de ID van het agenda-item.
+   Deze hebben we wel nodig op de verwerkpagina. De ID moet nog worden toegevoegd.
+   MAAR: de gebruiker mag de ID niet aanpassen!
+   Er zijn verschillende manieren om dat op te lossen. Hier wordt gebruik gemaakt van een
+   ‘hidden field’: een formulierveld dat niet zichtbaar is voor de gebruiker.
+
+   7. Voeg bovenaan in het formulier een hidden field toe.
+      Noem deze ‘ID’.
+      Zet in dit veld de waarde van de ID:
+
+
+
+
+   8. Test de aanpaspagina.
+      Kijk in de browser in de code van de pagina: wordt de hidden field gevuld met de ID van
+      het agenda-item?
+
+       Als de items ook nog los onder het formulier worden getoond, dan moeten deze nog
+       worden verwijderd.
+
+
+
+OEFENING 4.3: DE BEWERK-VERWERKPAGINA MAKEN
+
+Nu het bewerkformulier werkt, kunnen we de verwerkpagina van dit formulier gaan maken.
+Deze pagina lijkt heel veel op de verwerkpagina van het toevoegformulier
+(‘agenda_toevoegen_verwerk.php’); we kunnen deze code gebruiken op de verwerkpagina van
+het aanpasformulier.
+
+   1. Maak een nieuwe PHP-pagina: agenda_aanpassen_verwerk.PHP.
+   2. Controleer of het formulier is verstuurd en lees alle velden uit:
+
+
+
+
+       Zorg dat ook de ID wordt uitgelezen!
+
+   Omdat we niet weten welk veld is aangepast, moeten we alle waarden updaten.
+
+
+                                                                                                41
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+   3. Maak de update-query en voer die uit:
+
+
+
+
+   4.   Maak de bijbehorende view om het resultaat te tonen:
+        agenda_toevoegen_verwerk_view.php.
+        Maak op deze pagina ook een link naar de overzichtspagina.
+
+   5. Test het geheel:
+      Klik in de overzichtspagina op een aanpaslink, verander een aantal gegevens en check of
+      de gegevens zijn aangepast.
+
+
+De CRUD-applicatie is nu af; we hebben de volgende pagina’s gemaakt:
+   • Create:          agenda_toevoegen.php en agenda_toevoegen_verwerk.php
+   • Read:            agenda.php en agenda_detail.php
+   • Update:          agenda_bewerken.php en agenda_bewerken_verwerk.php
+   • Delete:          agenda_verwijderen.php en agenda_verwijderen_verwerk.php
+En natuurlijk de bijbehorende views
+
+
+De agenda-applicatie is nog niet helemaal af.
+In het volgende hoofdstuk gaan we de agenda verbeteren.
+
+                                                                                                42
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 5 – INLOG EN BEVEILIGING
+
+Bijna alle applicaties waarin met gegevens wordt omgegaan vereisen een vorm van beveiliging. Je
+wilt beheer van je gegevens in de applicatie natuurlijk niet zomaar open en bloot door iedereen
+laten uitvoeren. Daarom ga je nu een login en sessiebeheer aan de applicatie toevoegen.
+
+INLOG ZONDER DATABASE
+
+Als je van tevoren weet dat er weinig mensen, of zelfs maar één persoon, de applicatie gaan
+gebruiken dan kan je een inlog maken zonder een database te gebruiken.
+Voorbeelden hiervan zijn op internet te vinden. Kijk maar eens op:
+   •   https://www.youtube.com/watch?v=MzxxWPYYCFQ
+   •   https://www.webdesignvista.com/simple-login-system-in-php-without-database/
+
+In jouw agenda-applicatie ga je wél gebruik maken van een databasetabel waarin de gebruikers
+met naam en wachtwoord worden opgeslagen.
+
+
+INLOG MET DATABASE
+
+Het is veiliger om de inloggegevens te bewaren in een database, en niet in de php-pagina zelf.
+Daarom ga je nu eerst een tabel maken met daarin de inloggegevens van de users.
+Deze tabel (‘users’) zou er als volgt uit kunnen zien:
+
+
+
+
+Een paar opmerkingen over de tabel:
+
+   •   Het id is de key van de tabel en is autonummering.
+       Als je zeker weet dat er geen users zullen zijn met dezelfde username, dan kan je het veld
+       ‘username’ als key gebruiken.
+   •   Het level is extra. Mocht je later verschil willen maken in userlevels, dan kan je deze
+       gebruiken.
+   •   Het wachtwoord wordt gehashed opgeslagen, zodat het niet leesbaar is voor anderen.
+       In deze tabel is gekozen voor een sha1-beveiliging. sha1 is een string van 40 karakters en
+       bestaat uit hexadecimale tekens. (https://en.wikipedia.org/wiki/SHA-1).
+       Dit is niet de veiligste methode maar wel eenvoudig. Zorg ervoor dat alle karakters van het
+       wachtwoord in het veld passen; kies daarom bijvoorbeeld “varchar(100)”
+
+
+
+                                                                                                 43
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+Als je in phpmyadmin een user wilt toevoegen met een sha1-wachtwoord, dan kan je dat als volgt
+doen:
+
+
+
+
+INLOGFORMULIER
+
+Het inlogformulier kan er redelijk eenvoudig uitzien:
+
+
+
+
+Gebruik voor het wachtwoordveld het input-type “password” zodat het wachtwoord tijdens het
+typen niet zichtbaar is.
+Beide velden zijn “required”.
+
+
+INLOG VERWERKEN
+
+De verwerking van de inlog gebeurt op een (aparte) php-pagina.
+Hieronder een voorbeeld van (een deel van) de verwerkpagina:
+
+
+
+
+LET OP: zorg dat het wachtwoord gehashed is voordat je deze gebruikt in de query!
+
+
+
+                                                                                             44
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+SESSIONS
+
+Om ervoor te zorgen dat alle pagina’s bereikbaar zijn voor ingelogde gebruikers, maak je gebruik
+van sessions. Een session bewaart informatie die je op verschillende pagina’s kan gebruiken; zoals
+je inloggegegevens.
+
+Voor meer informatie over sessions, zie: https://www.w3schools.com/php/php_sessions.asp
+
+In dit voorbeeld wordt de username in een session opgeslagen. Deze username wordt hier uit het
+formulier gehaald:
+
+
+
+
+Als de session is gemaakt, wordt de user direct doorgestuurd naar de overzichtspagina.
+
+Nu ga je de code schrijven die controleert of de user is ingelogd, oftewel of de session ‘username’
+bestaat. Dit doe je in een apart bestand! Bijvoorbeeld ‘session.inc.php’. Dit bestand wordt
+toegevoegd aan alle pagina’s die beveiligd moeten worden.
+Dit bestand zou er als volgt uit kunnen zien:
+
+
+
+
+Bovenaan(!) elke pagina, die beveiligd moet worden, wordt dit bestand toegevoegd:
+
+
+
+
+UITLOGGEN
+
+Om de user te laten uitloggen, maak je (op elke pagina) een link naar de uitlogpagina
+(‘loguit.php’). Op deze pagina worden de session verwijderd; daarna wordt de user doorgestuurd
+naar de loginpagina of de indexpagina.
+
+
+
+                                                                                                  45
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+Het verwijderen van een session kan op verschillende manieren. Zie:
+
+   •   https://www.w3schools.com/php/php_sessions.asp
+   •   https://www.geeksforgeeks.org/php-unset-session-variable/
+
+Een eenvoudige uitlogpagina ziet er als volgt uit:
+
+
+
+
+LET OP: vergeet niet de session te starten!
+
+
+VOORBEELDEN OP INTERNET
+
+Op internet zijn diverse tutorials te vinden waarin een volledige inlog wordt uitgelegd, inclusief
+sessions.
+Ga op zoek naar zo’n tutorial en neem deze door.
+Kijk bijvoorbeeld op:
+
+   •   https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+   •   https://www.geeksforgeeks.org/how-to-create-admin-login-page-using-php/
+
+
+
+
+                                                                                                     46
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+LES 6 – VERDIEPING
+
+Maak onderstaande opdrachten om jouw applicatie zoveel mogelijk te verbeteren.
+Zoek zelf uit welke technieken of queries je nodig hebt om deze verbeteringen toe te passen.
+
+
+OPMAAK
+•   Zorg dat alle pagina’s een mooie opmaak krijgen.
+    Voeg daarvoor aan alle pagina’s html-code toe (zie opdracht 6.2) en maak een link naar een
+    externe CSS-pagina.
+    Voeg indien nodig, extra elementen (zoals divs) toe aan jouw pagina’s.
+•   Misschien kan je zelfs nog JavaScript toevoegen om verschillende meldingen te tonen.
+
+
+OVERZICHTSPAGINA
+•   Zorg dat de overzichtspagina meer onderdelen toont.
+•   Kijk hoe je kan sorteren op datum, zodat het item dat het eerst af moet zijn bovenaan staat.
+    Of sorteer op prioriteit, of status.
+    Kan je ook de gebruiker zelf laten sorteren?
+•   Laat alleen de agenda-items zien, waarvan de prioriteit op ‘1’ staat.
+    Of toon alleen de items die nog niet zijn afgerond.
+    Ook hier: kan je de gebruiker laten kiezen?
+•   Zorg dat de gebruiker na het toevoegen van een item direct wordt teruggestuurd naar de
+    overzichtspagina. Doe dit ook na het aanpassen en verwijderen, als dit goed is gegaan.
+
+
+TOEVOEGPAGINA
+•   Maak van het formulier op de toevoegpagina een volledig html5-formulier.
+    Gebruik ‘required’ voor verplichte velden, zorg dat bij prioriteit alleen getallen tussen 1 en 5
+    ingevuld kunnen worden, enzovoort.
+•   Check op de verwerkpagina van het toevoegformulier of elk item wel ingevuld is.
+    Bijvoorbeeld (if ($ond == “”) { ….}
+    Geef een foutmelding als er iets leeg is en voeg de gegevens dan NIET toe aan de
+    databasetabel.
+•   Check in toevoegVerwerk.php of alle gegevens wel van het juiste type zijn.
+    Is prioriteit een getal? Is status wel “n”, “b” of “a”? Zijn begindatum en einddatum wel data?
+    Ligt de begindatum niet in het verleden? …..
+
+
+EIGEN VERBETERINGEN
+•   Bedenk zelf hoe je de applicatie nog verder kan verbeteren.
+
+
+
+
+                                                                                                       47
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+
+                              OPDRACHTEN
+Bij elke opdracht staat een icon: een afbeelding over het gebruik van AI.Hou je aan de icon die
+voor de opdracht staat.
+LET OP: elke code die je schrijft, moet je zelf kunnen uitleggen.
+
+Uitleg iconen:
+
+
+
+
+ Zie je dit icoon dan betekent dit dat het gebruik van Ai tools zoals Copilot en chatGPT niet zijn toegestaan.
+
+
+
+
+ Zie je dit icoon dan betekent het dat je Ai tools zoals Copilot en chatGPT mag gebruiken als studiehulp. Je
+ kan vragen stellen om de leerstof beter te begrijpen.
+
+
+
+ Zie je dit icoon dan betekent het dat je Ai tools zoals Copilot en chatGPT kan gebruiken zoals jij wilt. Je kunt
+ Ai gebruiken voor onderzoek of om samen te leren.
+
+
+
+OPDRACHT 1.1: DATABASETABEL EN CONNECTIONSCRIPT
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •   Les 1.1
+       o De database
+       o PHP en de database
+
+Maak daarna onderstaande opdracht
+
+  •   Maak op PHPMyAdmin een database met de naam 123456_PROGRAM1
+      Vervang ‘123456’ door jouw eigen studentnummer.
+  •   Binnen de database maak je een tabel. Bedenk zelf een onderwerp en naam voor de tabel;
+      de naam moet wel beginnen met de eerste letter van jouw naam.
+       o Geef de tabel minimaal 5 logische velden. Zorg dat de velden van het juiste type zijn.
+       o Vergeet de primary key niet!
+  •   Vul de tabel met minimaal 5 records.
+
+  •   Maak nu de pagina config.php en plaats deze op PLESK in de map ‘program2/crud’.
+      o Hierin plaats je het connectionscript zoals beschreven in de oefeningen
+      o Voeg ook de code toe om foutmeldingen weer te kunnen geven
+
+                                                                                                                    48
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+OPDRACHT 1.2: OVERZICHT- EN DETAILPAGINA
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •   Les 1.2 - Overzichts- en detailpagina
+
+Maak daarna onderstaande opdracht.
+De pagina’s plaats je op PLESK in de map ‘program2/crud’
+
+  •   Maak de pagina index.php en de bijbehorende pagina index_view.php.
+      o Op deze pagina’s lees je jouw tabel uit en worden alle records overzichtelijk getoond.
+         LET OP: toon niet alle velden. In het voorbeeld van de agenda zou alleen het
+         Onderwerp getoond worden.
+      o Geef in de tabel elke rij een link mee naar de detailpagina.
+  •   Maak de detailpagina (detail.php en detail_view.php)
+      o Op deze pagina worden alle gegevens overzichtelijk getoond van het record waarop is
+         geklikt.
+      o Zorg ook voor een link terug naar de overzichtspagina.
+
+
+
+OPDRACHT 2.1: TOEVOEGEN
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •   Les 2.1 – Gegevens toevoegen
+       o Overzichts- en detailpagina
+
+Maak daarna onderstaande opdracht.
+
+De pagina’s plaats je op PLESK in de map ‘program2/crud’
+Bedenk zelf hoe je de code en view op de pagina’s gaat scheiden. Gebruik de code uit de reader
+als voorbeeld.
+
+  •   Maak een pagina met daarop een formulier.
+      o In dit formulier kan een gebruiker gegevens toevoegen aan jouw databasetabel.
+      o Na een klik op de knop worden deze gegevens verwerkt door de verwerkpagina
+  •   Maak de verwerkpagina
+      o Op deze pagina worden de gegevens uitgelezen van het formulier.
+      o Deze gegevens worden daarna op de juiste manier toegevoegd aan de tabel.
+      o De gebruiker krijgt een melding of dit is gelukt.
+      o Zorg ook voor een link terug naar de overzichtspagina.
+
+
+
+
+                                                                                                 49
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+
+OPDRACHT 2.2: VERWERKPAGINA: DATA CONTROLEREN
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •   Les 2.2 - Formuliercontrole
+
+Maak daarna onderstaande opdracht.
+
+Pas de verwerkpagina van het toevoegformulier aan.
+Zorg dat zoveel mogelijk beveiligingsmethoden worden toegevoegd.
+(LET OP: het is handig om eerst een backup van jouw verwerkpagina te maken.)
+
+De volgende beveiligingen moeten in ieder geval worden toegevoegd:
+
+  •   Controle op herkomst van het formulier
+  •   Alle invoer wordt gecontroleerd op juiste waarde.
+      (dus: is begindatum een datum, is prioriteit een getal van 1 tot 5, enzovoort)
+  •   Als er iets niet klopt, dan wordt er niks weggeschreven naar de database
+      De gebruiker krijgt in de view te zien wat er fout is gegaan.
+  •   Als alles klopt, dan worden de gegevens eerst opgeschoond (gefilterd) voordat ze in de
+      database worden weggeschreven.
+
+Bedenk zelf hoe je alle foutmeldingen bewaart en in de view toont aan de gebruiker.
+In het onderstaande voorbeeld worden alle foutmeldingen in één string (‘$foutmelding’)
+opgeslagen:
+
+
+
+
+Maar je kan er natuurlijk ook voor kiezen om alle foutmeldingen netjes in een array op te slaan.
+                                                                                                   50
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+De foutmeldingen worden natuurlijk getoond aan de gebruiker in de view.
+
+
+
+OPDRACHT 3: VERWIJDERPAGINA
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •   Les 3 – Gegevens verwijderen
+
+Maak daarna onderstaande opdracht.
+
+
+  •   Zorg dat er op de overzichtspagina achter elk record een link staat naar de verwijderpagina.
+      o Natuurlijk stuur je het ID van het record mee naar de verwijderpagina
+  •   Maak de pagina’s om het record te verwijderen:
+      o Eerst krijgt de gebruiker het record te zien met de vraag of deze verwijderd moet
+          worden
+      o Na bevestiging wordt het record verwijderd.
+  •   Bepaal zelf wat er na het verwijderen gebeurt:
+      o De gebruiker wordt teruggestuurd naar de overzichtspagina
+      o De gebruiker krijgt een melding en kan zelf terugklikken naar de overzichtspagina.
+
+Zorg dat ook hier de code en view op de juiste manier worden gescheiden
+
+
+
+OPDRACHT 4: AANPASPAGINA
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •   Les 4 – Gegevens aanpassen
+
+Maak daarna onderstaande opdracht.
+
+
+  •   Zorg dat er op de overzichtspagina achter elk record een link staat naar de aanpaspagina.
+      o Natuurlijk stuur je het ID van het record mee naar de verwijderpagina
+  •   Maak de aanpaspagina:
+      o Op deze pagina staat het formulier.
+      o In het formulier zijn alle gegevens van het record al ingevuld.
+      o De gebruiker kan bepalen welke gegevens moeten worden aangepast.
+      o Na een klik op de submit-knop worden de gegevens (op een verwerkpagina) aangepast.
+  •   Maak de aanpasverwerkpagina:
+
+
+
+                                                                                                51
+PROGRAM2, PHP – CRUD: My First Agenda
+
+
+          o De gegevens worden uit het formulier gelezen en op de juiste manier aangepast in de
+             databasetabel.
+             Vergeet niet om ook hier controles uit te voeren op de gegevens.
+  •       Bepaal zelf wat er na het aanpassen gebeurt:
+          o De gebruiker wordt teruggestuurd naar de overzichtspagina
+          o De gebruiker krijgt een melding en kan zelf terugklikken naar de overzichtspagina.
+
+Zorg dat ook hier de code en view op de juiste manier worden gescheiden
+
+
+
+OPDRACHT 5: INLOG EN SESSIONS
+
+Neem eerst de volgende theorie door voordat je de opdracht gaat maken:
+
+  •       Les 5 – Inlog en beveiliging
+
+Maak daarna onderstaande opdracht.
+
+Pas de stappen uit les 7 toe om jouw applicatie te beveiligen.
+Zorg daarbij dat minimaal de volgende functionaliteit is toegevoegd:
+
+      •    Inlogpagina + inlog-verwerkpagina
+           Bij goede inlog wordt een session gemaakt
+      •    Aparte controlepagina (‘session.inc.php’)
+           Deze controleert of de session is gemaakt; zo niet dan wordt de user doorgestuurd naar de
+           inlogpagina.
+      •    Beveiliging van alle pagina’s.
+           Op elke pagina waarin de database kan worden aangepast, wordt de controlepagina
+           toegevoegd. Zo kan iemand die niet is ingelogd, de database niet aanpassen.
+      •    Uitlog
+           Zorg dat elke ingelogde user ook weer kan uitloggen.
+
+
+Zorg dat ook hier de code en view op de juiste manier worden gescheiden
+
+
+
+EXTRA OPDRACHT: VERDIEPING
+
+Als je klaar bent met bovenstaande opdrachten en je hebt nog tijd over, dan ga je verbeteringen
+doorvoeren aan jouw webapplicatie.
+Gebruik daarvoor de tips uit les 6 – Verdieping.
+of bedenk zelf aanpassingen die jouw applicatie verbeteren.
+
+
+
+                                                                                                  52
+
