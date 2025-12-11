@@ -1,0 +1,9 @@
+$main-color: #e91e63;
+$secondary-color: #ffeb3b;
+$font-size-base: 16px;
+
+.alert {
+  background-color: $main-color;
+  color: white;
+  font-size: $font-size-base;
+}

@@ -1,0 +1,8 @@
+.card .card__title {
+  color: blue;
+  font-size: larger;
+}
+.card .card__content {
+  color: gray;
+  font-size: smaller;
+}
