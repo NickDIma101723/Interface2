@@ -1,0 +1,9 @@
+@use 'variables';
+
+.container {
+    max-width: variables.$container-width;
+    padding: variables.$container-padding;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

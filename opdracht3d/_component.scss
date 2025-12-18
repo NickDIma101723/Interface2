@@ -1,0 +1,21 @@
+@use 'variables';
+
+.card {
+    background-color: variables.$card-bg;
+    border: 1px solid variables.$card-border;
+    border-radius: variables.$border-radius;
+    padding: variables.$padding-base;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 400px;
+    
+    .card-title {
+        margin-top: 0;
+        font-size: 1.25rem;
+        color: #333;
+    }
+    
+    .card-body {
+        margin-bottom: 1rem;
+        color: #555;
+    }
+}
