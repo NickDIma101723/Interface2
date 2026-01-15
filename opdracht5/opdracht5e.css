@@ -1,0 +1,18 @@
+.l-header {
+  background-color: #333;
+  padding: 20px;
+}
+.l-header .l-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.l-header .l-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.l-header .l-nav ul li a.is-active {
+  color: #ff0;
+  font-weight: bold;
+}
+

@@ -1,0 +1,10 @@
+@use '../abstracts/variables';
+
+.is-hidden {
+    display: none;
+}
+
+.is-active {
+    font-weight: bold;
+    color: variables.$primary-color;
+}

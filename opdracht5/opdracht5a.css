@@ -1,0 +1,23 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card__image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.card__title {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #333;
+}
+.card__description {
+  color: #666;
+  line-height: 1.4;
+}
+

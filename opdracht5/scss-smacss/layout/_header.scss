@@ -1,0 +1,20 @@
+@use '../abstracts/variables';
+
+.l-header {
+    background-color: variables.$primary-color;
+    color: white;
+    padding: variables.$padding-medium;
+}
+
+.l-nav {
+    ul {
+        list-style: none;
+        display: flex;
+        gap: variables.$padding-medium;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}

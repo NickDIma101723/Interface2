@@ -1,0 +1,28 @@
+$header-bg: #333;
+$nav-link-color: #fff;
+$active-color: #ff0;
+
+.l-header {
+    background-color: $header-bg;
+    padding: 20px;
+
+    .l-nav {
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+            li {
+                a {
+                    color: $nav-link-color;
+                    text-decoration: none;
+
+                    &.is-active {
+                        color: $active-color;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

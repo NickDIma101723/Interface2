@@ -1,0 +1,19 @@
+$card-bg: #fff;
+$card-text: #333;
+$card-dark-bg: #333;
+$card-dark-text: #fff;
+$border-radius: 8px;
+
+.card {
+    background-color: $card-bg;
+    color: $card-text;
+    border-radius: $border-radius;
+    padding: 16px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    &--dark {
+        background-color: $card-dark-bg;
+        color: $card-dark-text;
+    }
+}
